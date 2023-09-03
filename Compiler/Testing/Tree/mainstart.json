@@ -1,0 +1,405 @@
+{
+  "content_sections": [
+    {
+      "title": "Die binomischen Formeln",
+      "content": [
+        {
+          "type": "TEXT",
+          "line": 10,
+          "text_sections": [
+            {
+              "type": "MD_TEXT",
+              "content": {
+                "type": "root",
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "This is some text with "
+                  },
+                  {
+                    "type": "bold",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "strong"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " text and "
+                  },
+                  {
+                    "type": "italics",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "cursive"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " text and "
+                  },
+                  {
+                    "type": "bold-italics",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "strong cursive text"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " this is "
+                  },
+                  {
+                    "type": "strikethrough",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "strike through"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "line": 12,
+          "text_sections": [
+            {
+              "type": "MD_TEXT",
+              "content": {
+                "type": "root",
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "Beim Rechnen mit quadratischen Funktionen muss man oft Summen oder Differenzen wie zum Beispiel (x+3) quadrieren. Dabei helfen sehr oft die drei binomischen Formeln:"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "TAG",
+          "line": 14,
+          "string_attributes": [],
+          "name": "Expandbox",
+          "attributes": [
+            {
+              "attr_name": "numerated",
+              "has_value": false
+            },
+            {
+              "attr_name": "other",
+              "has_value": false
+            },
+            {
+              "attr_name": "attributes",
+              "has_value": false
+            },
+            {
+              "attr_name": "attribute_name",
+              "has_value": true,
+              "value": "value"
+            }
+          ],
+          "content": [
+            {
+              "type": "TAG",
+              "line": 15,
+              "string_attributes": [
+                "The Items title"
+              ],
+              "name": "Item",
+              "attributes": [
+                {
+                  "attr_name": "attr",
+                  "has_value": true,
+                  "value": "value"
+                }
+              ],
+              "content": [
+                {
+                  "type": "TEXT",
+                  "line": 16,
+                  "text_sections": [
+                    {
+                      "type": "MD_TEXT",
+                      "content": {
+                        "type": "root",
+                        "children": [
+                          {
+                            "type": "underline",
+                            "children": [
+                              {
+                                "type": "text",
+                                "value": "Beweis:"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "TEXT",
+                  "line": 17,
+                  "text_sections": [
+                    {
+                      "type": "MD_TEXT",
+                      "content": {
+                        "type": "root",
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Some string"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "TAG",
+                  "line": 18,
+                  "string_attributes": [],
+                  "name": "Beispiel",
+                  "attributes": [],
+                  "content": [
+                    {
+                      "type": "LIST",
+                      "line": 19,
+                      "list_type": "nummerated",
+                      "list_items": [
+                        {
+                          "line": 19,
+                          "type": "LIST_ITEM",
+                          "list_type": "nummerated",
+                          "parsed_text": {
+                            "line": 19,
+                            "type": "TEXT",
+                            "text_sections": [
+                              {
+                                "type": "MD_TEXT",
+                                "content": {
+                                  "type": "root",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "value": "Liste nummerated"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "line": 20,
+                          "type": "LIST_ITEM",
+                          "list_type": "nummerated",
+                          "parsed_text": {
+                            "line": 20,
+                            "type": "TEXT",
+                            "text_sections": [
+                              {
+                                "type": "MD_TEXT",
+                                "content": {
+                                  "type": "root",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "value": "Element 2"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "line": 21,
+                          "type": "LIST_ITEM",
+                          "list_type": "nummerated",
+                          "parsed_text": {
+                            "line": 21,
+                            "type": "TEXT",
+                            "text_sections": [
+                              {
+                                "type": "MD_TEXT",
+                                "content": {
+                                  "type": "root",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "value": "Element 3"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "LIST",
+                      "line": 22,
+                      "list_type": "unnummerated",
+                      "list_items": [
+                        {
+                          "line": 22,
+                          "type": "LIST_ITEM",
+                          "list_type": "unnummerated",
+                          "parsed_text": {
+                            "line": 22,
+                            "type": "TEXT",
+                            "text_sections": [
+                              {
+                                "type": "MD_TEXT",
+                                "content": {
+                                  "type": "root",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "value": "List unnumerated"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "TEXT",
+                  "line": 24,
+                  "text_sections": [
+                    {
+                      "type": "MULTILINE_TEXT",
+                      "content": "$$\n    multiline math\n    $$"
+                    }
+                  ]
+                },
+                {
+                  "type": "TEXT",
+                  "line": 27,
+                  "text_sections": [
+                    {
+                      "type": "MD_TEXT",
+                      "content": {
+                        "type": "root",
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Wieder im Item"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TEXT",
+              "line": 30,
+              "text_sections": [
+                {
+                  "type": "MD_TEXT",
+                  "content": {
+                    "type": "root",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Jetzt kann ich hier nämlich weiter schreiben"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "line": 32,
+              "text": "<div>This will be inserted as raw html</div>",
+              "type": "HTML_EMBEDDING"
+            },
+            {
+              "type": "TEXT",
+              "line": 36,
+              "text_sections": [
+                {
+                  "type": "MD_TEXT",
+                  "content": {
+                    "type": "root",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "How to do custom js snippets?"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TEXT",
+              "line": 38,
+              "text_sections": [
+                {
+                  "type": "MD_TEXT",
+                  "content": {
+                    "type": "root",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Option1:"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "line": 39,
+              "text": "// There is some global variable with meta data and such i can access even in {} blocks",
+              "type": "JS_EMBEDDING",
+              "dependencies": [
+                "dependency"
+              ],
+              "options": []
+            },
+            {
+              "line": 44,
+              "text": "/* This will go into css styles*/",
+              "type": "CSS_EMBEDDING"
+            },
+            {
+              "line": 51,
+              "text": "console.log(\"This will go into {} script tags\");",
+              "type": "JS_EMBEDDING",
+              "dependencies": [],
+              "options": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "title": {
+    "value": "Quadratische Funktionen",
+    "line": 8
+  }
+}

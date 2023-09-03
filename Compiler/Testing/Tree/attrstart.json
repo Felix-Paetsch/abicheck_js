@@ -1,0 +1,22 @@
+[
+  {
+    "name": "tg",
+    "value": "Analysis",
+    "line": 1
+  },
+  {
+    "name": "author",
+    "value": "Felix",
+    "line": 2
+  },
+  {
+    "name": "require",
+    "value": "css/some_style.css",
+    "line": 5
+  },
+  {
+    "name": "require",
+    "value": "js/some_js.js",
+    "line": 6
+  }
+]

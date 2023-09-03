@@ -1,0 +1,166 @@
+[
+  {
+    "type": "OPEN_BRACKET",
+    "value": "["
+  },
+  {
+    "type": "TEXT",
+    "value": "tg"
+  },
+  {
+    "type": "COLON",
+    "value": ":"
+  },
+  {
+    "type": "TEXT",
+    "value": "Analysis"
+  },
+  {
+    "type": "CLOSING_BRACKET",
+    "value": "]"
+  },
+  {
+    "type": "NEW_LINE",
+    "value": "\n"
+  },
+  {
+    "type": "OPEN_BRACKET",
+    "value": "["
+  },
+  {
+    "type": "TEXT",
+    "value": "author"
+  },
+  {
+    "type": "COLON",
+    "value": ":"
+  },
+  {
+    "type": "TEXT",
+    "value": "Felix"
+  },
+  {
+    "type": "CLOSING_BRACKET",
+    "value": "]"
+  },
+  {
+    "type": "NEW_LINE",
+    "value": "\n"
+  },
+  {
+    "type": "NEW_LINE",
+    "value": "\n"
+  },
+  {
+    "type": "TWO_FORWARD_SLASH",
+    "value": "//"
+  },
+  {
+    "type": "WHITESPACE",
+    "value": " "
+  },
+  {
+    "type": "TEXT",
+    "value": "Hello"
+  },
+  {
+    "type": "NEW_LINE",
+    "value": "\n"
+  },
+  {
+    "type": "OPEN_BRACKET",
+    "value": "["
+  },
+  {
+    "type": "TEXT",
+    "value": "require"
+  },
+  {
+    "type": "COLON",
+    "value": ":"
+  },
+  {
+    "type": "TEXT",
+    "value": "css"
+  },
+  {
+    "type": "FORWARD_SLASH",
+    "value": "/"
+  },
+  {
+    "type": "TEXT",
+    "value": "some_style.css"
+  },
+  {
+    "type": "CLOSING_BRACKET",
+    "value": "]"
+  },
+  {
+    "type": "WHITESPACE",
+    "value": " "
+  },
+  {
+    "type": "TWO_FORWARD_SLASH",
+    "value": "//"
+  },
+  {
+    "type": "WHITESPACE",
+    "value": " "
+  },
+  {
+    "type": "TEXT",
+    "value": "It's"
+  },
+  {
+    "type": "WHITESPACE",
+    "value": " "
+  },
+  {
+    "type": "TEXT",
+    "value": "me"
+  },
+  {
+    "type": "NEW_LINE",
+    "value": "\n"
+  },
+  {
+    "type": "OPEN_BRACKET",
+    "value": "["
+  },
+  {
+    "type": "TEXT",
+    "value": "require"
+  },
+  {
+    "type": "COLON",
+    "value": ":"
+  },
+  {
+    "type": "TEXT",
+    "value": "js"
+  },
+  {
+    "type": "FORWARD_SLASH",
+    "value": "/"
+  },
+  {
+    "type": "TEXT",
+    "value": "some_js.js"
+  },
+  {
+    "type": "CLOSING_BRACKET",
+    "value": "]"
+  },
+  {
+    "type": "NEW_LINE",
+    "value": "\n"
+  },
+  {
+    "type": "NEW_LINE",
+    "value": "\n"
+  },
+  {
+    "type": "END_ATTRIBUTES",
+    "value": ""
+  }
+]
