@@ -1,0 +1,22 @@
+<script type="text/javascript">
+    function feedbackClicked(){
+        $('#feedback-overlay').removeClass('disnone');
+    }
+    
+    function overlayClicked(){
+        $('#feedback-overlay').addClass('disnone');
+    }
+    </script>
+    <link rel="stylesheet" type="text/css" href="<%- CONF.host %>/css/old/TG_feedback.css">
+    
+    <div id="feedback-overlay" class="disnone">
+        <div class="overlayEscape"onclick="overlayClicked()" ></div>
+        <form method="POST">
+            <div class="formtoptext">
+                <h2>Feedback</h2>
+                <p>Hast du einen Verbesserungsvorschlag oder wünschst dir noch mehr Erklärungen? Dann kannst du mir das hier mitteilen.</p>
+            </div>
+            <textarea name="feedback" spellcheck="false" placeholder="Dein Feedback..."></textarea>
+            <input type="submit" name="stuff" value="Abschicken">
+        </form>
+    </div>

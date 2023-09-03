@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="icon" href="<%- CONF.host %>/images/general/webcon2.png">
+	<title>Analysis</title>
+	<link rel="stylesheet" type="text/css" href="<%- CONF.host %>/css/old/tools.css">
+	<link rel="stylesheet" type="text/css" href="<%- CONF.host %>/css/sub_page.css">
+	<link rel="stylesheet" type="text/css" href="<%- CONF.host %>/css/old/allgemeinformat.css">
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<%- include("general/page_top") %>
+
+<%- include("general/fixed_sidecontent", {
+	top: {
+		href: "#",
+		name: "Startseite"
+	},
+	main: {
+		href: null,
+		name: "Rechner",
+		children: [{
+			href: "/r/Integrieren",
+			name: "Integrieren"	
+		},{
+			href: "#",
+			name: "Integrieren"	
+		}]
+	}
+}) %>
+
+<div id="main-wrapper">
+	<div class="main-content">
+		<h3 class="title">Article Name</h3>
+		<div class="box inhalt">
+			<div class="topic">Inhalt</div>
+			<div class="topic-ul">
+				<% for (let i = 0; i < 5; i++) { %>
+					<a href="#"><%= i+1 %>. Abschnitt</a>
+				<% } %>
+			</div>
+			<div class="inhalt-box">
+				<a href="#" class="übungen">
+					<h4>Übungen</h4><h6>So wirds gemacht</h6>
+				</a>
+			</div>
+		</div>
+
+
+		<div class="box content-box">
+			<div class="anchor" id="#"></div>
+			<h3 class="topic">1. Helllo</h3>
+			<p>
+				Beim Rechnen mit quadratischen Funktionen muss man oft Summen oder Differenzen wie zum Beispiel \((x+3)\) quadrieren. 
+				Dabei helfen sehr oft die drei binomischen Formeln:
+			</p>
+			<div class="expandbox expb1">
+				<div class="expandchild">
+					<div class="exp-head" onclick="toggleClass('#arrowbox1', 'exp-active'); toggleClass('#expcont1', 'disnone')">
+						1. \((a+b)^2 = a^2 + 2ab + b^2\)
+						<div id="arrowbox1" class="arrowbox">
+							<div class="exp-arrow"></div>
+							<div class="exp-arrow exp-arrow2"></div>
+						</div>
+					</div>
+					<div id="expcont1" class="expandcontent disnone">
+						<u>Beweis:</u>
+						<p>$$\style{margin-top:-10px;}{\begin{eqnarray} 
+								(a+b)^2 &=& (a+b)(a+b)   \nonumber \\
+								&=& a(a+b)+b(a+b)   \nonumber \\
+								&=& a^2+ab+ba+b^2 \nonumber \\
+								&=& a^2 + 2ab + b^2\nonumber
+							\end{eqnarray} }
+							$$
+						</p>
+						<div class="example example5">
+							<li>\((a+4)^2 = a^2 + 8a + 16\)</li>
+							<div class="expl-hr"></div>
+							<li>\((3+2u)^2 = 9 + 12u + 4u^2\)</li>
+							<div class="expl-hr"></div>
+							<li>\((b^2+1)^2 = b^4 + 2b^2 + 1\)</li>
+						</div>
+					</div>
+				</div>
+				<div class="expandchild">
+					<div class="exp-head" onclick="toggleClass('#arrowbox2', 'exp-active'); toggleClass('#expcont2', 'disnone')">2. \((a-b)^2 = a^2 - 2ab + b^2\)
+						<div id="arrowbox2" class="arrowbox">
+							<div class="exp-arrow"></div>
+							<div class="exp-arrow exp-arrow2"></div>
+						</div>
+					</div>
+					
+					<div id="expcont2" class="disnone expandcontent">
+						<u>Beweis:</u>
+						<p>$$\style{margin-top:-10px;}{\begin{eqnarray} 
+								(a-b)^2 &=& (a-b)(a-b)   \nonumber \\
+								&=& a(a-b)-b(a-b)   \nonumber \\
+								&=& a^2-ab-ba+b^2 \nonumber \\
+								&=& a^2 - 2ab + b^2\nonumber
+							\end{eqnarray} }
+							$$
+						</p>
+						<div class="example example5">
+							<li>\((b-4)^2 = b^2 - 8b + 16\)</li>
+							<div class="expl-hr"></div>
+							<li>\((1-3x)^2 =  - 6x + 9x^2\)</li>
+							<div class="expl-hr"></div>
+							<li>\((2u^2-5v)^2 = 4u^4 - 20u^2v + 25v^2\)</li>
+						</div>
+					</div>
+				</div>
+				<div class="expandchild">
+					<div class="exp-head" onclick="toggleClass('#arrowbox3', 'exp-active'); toggleClass('#expcont3', 'disnone')">3. \((a+b)(a-b) = a^2 - b^2\)
+						<div id="arrowbox3" class="arrowbox">
+							<div class="exp-arrow"></div>
+							<div class="exp-arrow exp-arrow2"></div>
+						</div>
+					</div>
+					
+					<div id="expcont3" class="expandcontent disnone">
+						<u>Beweis:</u>
+						<p>$$\style{margin-top:-10px;}{\begin{eqnarray} 
+								(a+b)(a-b) &=& a(a-b)+b(a-b)   \nonumber \\
+								&=& a^2-ab+ba-b^2 \nonumber \\
+								&=& a^2 - b^2\nonumber
+							\end{eqnarray} }
+							$$
+						</p>
+						<div class="example example5">
+							<li>\((b+3)(b-3) = b^2 -9\)</li>
+							<div class="expl-hr"></div>
+							<li>\((2p+2)(2p-2) = 4p^2-4\)</li>
+							<div class="expl-hr"></div>
+							<li>\((x^2+y^3)(x^2-y^3) = x^4-y^6\)</li>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p>
+				Man kann diese Formeln allerdings auch <b>umgekehrt benutzen, um Terme zusammenzufassen oder Gleichungen zu lösen.</b>
+			</p>
+			<div class="example example1">
+				<li><span style="width: 90%">$$\frac{a^2-b^2}{a+b} = \frac{(a+b)(a-b)}{a+b} = a-b$$</span></li>
+				<div class="expl-hr"></div>
+				<li><span style="width: 90%;">
+					$$\begin{eqnarray} 
+					x^2+6x+9 &=& 16   \nonumber \\
+					x^2 + 2*3x + 3^2 &=& 16 \nonumber \\
+					(x+3)^2 &=& 16  &\rvert& \pm \sqrt{\phantom{a}} \nonumber \\
+					x+3 &=& \pm 4 &\rvert& -3 \nonumber \\
+					\nonumber \\
+					L &=& \text{{-7; 1}} \nonumber
+					\end{eqnarray} 
+					$$
+				</span></li>
+			</div>
+
+			<div class="important important1">
+				<li><span style="width: 90%">$$\frac{a^2-b^2}{a+b} = \frac{(a+b)(a-b)}{a+b} = a-b$$</span></li>
+				<div class="expl-hr"></div>
+				<li><span style="width: 90%;">
+					$$\begin{eqnarray} 
+					x^2+6x+9 &=& 16   \nonumber \\
+					x^2 + 2*3x + 3^2 &=& 16 \nonumber \\
+					(x+3)^2 &=& 16  &\rvert& \pm \sqrt{\phantom{a}} \nonumber \\
+					x+3 &=& \pm 4 &\rvert& -3 \nonumber \\
+					\nonumber \\
+					L &=& \text{{-7; 1}} \nonumber
+					\end{eqnarray} 
+					$$
+				</span></li>
+			</div>
+		</div>
+
+		<div class="mobile-end">
+			<a href="#" class="übungen">
+				<h4>Übungen</h4><h6>So wirds gemacht</h6>
+			</a>
+		</div>
+	</div>
+
+	<div class="scroll-up" id="scroll-up" tilte="Nach oben">
+		<div class="arrow arrow1"></div>
+		<div class="arrow arrow2"></div>
+	</div>
+</div>
+
+<%- include("general/feedback_btn"); %>
+<%- include("general/page_end"); %>

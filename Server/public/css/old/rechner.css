@@ -1,0 +1,86 @@
+.was-du-eingeben-sollst-p{
+	margin: 40px 0px 0px 20px;
+	font-size: 17px;
+	/*font-family: 'Roboto', serif;*/
+}
+
+.rechner_input_text{
+	margin: 20px 0px 20px 20px;
+	position: relative;
+}
+
+.recher_input_text form{	
+}
+
+.rechner_input_text input[type="text"], .rechner_input_text span#text{
+	font-size: 17px;
+	padding: 5px 5px 5px 5px;
+	min-width: 200px;
+	box-sizing: border-box;
+	line-height: 21px;
+
+	display: inline-block;
+}
+
+.rechner_input_text form{
+	position: relative;
+}
+
+.rechner_input_text input[type="button"]{
+	box-sizing: border-box;
+	height: 33px;
+	font-size: 17px;
+	width: 70px;
+	background-color: #fff;
+	color: rgba(46,156,202, 1);
+	border: solid 2px rgba(46,156,202, 1);
+	border-radius: 20px;
+	cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 320px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.rechner_input_text input[type="button"]:hover{
+	color: white;
+	background-color: rgba(46,156,202, 1);
+	transition-duration: .3s;
+}
+
+.ergebnis{
+	margin: 40px 0px 0px 20px;
+}
+
+.expl-link{
+	margin: 40px 0px 0px 20px;
+}
+
+.expl-link a{
+	font-style: italic;
+	text-decoration-line: underline;
+}
+
+.expl-link a:hover{
+	color: rgb(80,80,80);
+}
+
+.stylelinie{
+	height: 2px;
+	width: 80%;
+	background: rgba(46,156,202, 1);
+	margin: 40px 0px 30px 0px;
+}
+
+.stylelinie2{
+	height: 2px;
+	width: 80%;
+	background: rgba(46,156,202, 1);
+	margin: 40px 0px 30px 20px;
+}
+
+#funktions-name{
+	margin-bottom: 20px;
+}

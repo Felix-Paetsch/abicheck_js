@@ -1,0 +1,47 @@
+.wertetabelle{
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+}
+
+.wertetabelle .wt-section{
+	border-left: 1px solid black;
+}
+
+.wertetabelle .wt-section > div{
+	padding: 10px 10px 10px 10px;
+}
+
+.wertetabelle .wt-left{
+	border-left: 0px;
+}
+
+.wertetabelle .wt-top{
+	border-bottom: 1px solid black;
+}
+
+.content-box .important> li{
+	margin:15px 10px 15px 10px;
+	list-style: none;
+}
+
+.important .wertetabelle{
+	justify-content: center;
+	font-size: 18px;
+	margin: 15px 0px 15px 0px;
+}
+
+.canvas-outer-wrapper{
+	background-color: rgb(150,150,150); 
+	padding: 1px;
+	box-sizing: border-box;
+}
+
+.canvas-inner-wrapper{
+	background: white;
+	overflow: hidden;
+}
+
+.canvas-inner-wrapper{
+	position: relative;
+}

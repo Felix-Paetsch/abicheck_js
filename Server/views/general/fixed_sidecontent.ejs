@@ -1,0 +1,23 @@
+<link rel="stylesheet" type="text/css" href="<%- CONF.host %>/css/general/side_content.css">
+
+<div class="left-fixed">
+	<div class="left-fixed-list">
+		<a class="fixed-head fixed-head-a" href="<%- CONF.host %><%- top.href %>"><%= top.name %></a>
+		<%
+            if (typeof main.href !== "undefined" && main.href != null){
+        %>
+            <a class="fixed-head fixed-head-b" href="<%- CONF.host %><%- main.href %>"><%= main.name %></a>
+        <%
+            } else {
+        %>
+            <div class="fixed-head fixed-head-b"><%= main.name %></div>
+        <%
+            }
+        %>
+		<div class="fixed-ul">
+            <% for (c of main.children) { %>
+                <a href="<%- CONF.host %><%- c.href %>"><%= c.name %></a>
+            <% } %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,5 @@
+{
+    "port": 3005,
+    "host": "http://localhost:3005",
+    "json_limit": "50mb"
+}

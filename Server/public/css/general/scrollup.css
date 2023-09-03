@@ -1,0 +1,146 @@
+/* scroll */
+
+.scroll-up{
+	position: fixed;
+	cursor: pointer;
+	bottom: 30px;
+	right: 30px;
+	width: 50px;
+	height: 50px;
+	border-radius: 100px;
+	border:0px rgba(100,100,100,.9) solid;
+	z-index: 80;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transform: scale(1.2,1.2);
+}
+
+.scroll-up .arrow{
+	width: 25px;
+	height: 25px;
+	margin-left: 10px;
+	box-sizing: border-box;
+	border: 3px rgb(80,80,80) solid;
+	transform: rotate(45deg);
+}
+
+.scroll-up .arrow2{
+	margin-top:-15px;
+}
+
+#scroll-up {
+	transition:
+	opacity .5s, visibility .5s;
+	opacity: 0;
+	visibility: hidden;
+}
+
+#scroll-up.show {
+	opacity: 1;
+	visibility: visible;
+}
+
+.scrolled-d{
+	position: absolute;
+	bottom: 10px;
+}
+
+.scroll-up:hover .arrow{
+	transition-duration: .3s;
+}
+
+@media(max-width: 600px){
+	#scroll-up{
+		position: fixed;
+		top: 10px;
+		right: 70px;
+		transform: scale(.9,.9);
+		z-index: 99;
+	}
+
+	.scroll-up .arrow{
+		border-color: white;
+	}
+
+	.scroll-up:hover .arrow{
+		border-color: rgb(200,200,200);
+	}
+}
+
+@media(min-width: 600.1px){
+	.scroll-up{
+		right: 5px;
+		bottom: 20px;
+		transform: scale(.9,.9);
+		z-index: 80;
+	}
+	.scrolled-d{
+		bottom: 0px;
+	}
+
+	.scroll-up:hover .arrow{
+		border-color: rgb(100,100,100);
+	}
+}
+
+@media(min-width: 750.1px){
+	#scroll-up{
+		bottom: 30px;
+		right: 20px;
+		transform: scale(1.2,1.2);
+	}
+
+	.scrolled-d{
+		bottom: 10px;
+	}
+}
+
+@media(min-width: 900.9px){
+	#scroll-up{
+		position: fixed;
+		top: 10px;
+		right: 30px;
+		transform: scale(.9,.9);
+		z-index: 99;
+	}
+
+	.scroll-up .arrow{
+		border-color: white;
+	}
+
+	.scroll-up:hover .arrow{
+		border-color: rgb(100,100,100);
+	}
+}
+
+@media(min-width: 1200px){
+	#scroll-up{
+		right: unset;
+		left: 1100px;
+		z-index: 99;
+	}
+}
+
+@media(min-width: 1250px){
+	#scroll-up{
+		top:unset;
+		left: unset;
+		bottom: 30px;
+		right: 20px;
+		transform: scale(1.2,1.2);
+	}
+
+	.scrolled-d{
+		position: absolute !important;
+		bottom: 10px !important;
+	}
+
+	.scroll-up .arrow{
+		border-color: rgb(80,80,80);
+	}
+
+	.scroll-up:hover .arrow{
+		border-color: rgb(100,100,100);
+	}
+}

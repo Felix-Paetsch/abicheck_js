@@ -1,0 +1,8 @@
+<svg viewBox="-5 -5 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+<circle style="stroke:rgba(20,160,152,1);stroke-width:10; fill: none;" 
+	cx="40" cy="40" r="30"/>
+<line style="stroke:rgba(20,160,152,1);stroke-width:10; fill: none;"
+	x1="62" y1="62" x2="80" y2="80" stroke-linecap="round"/>
+
+</svg>

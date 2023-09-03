@@ -1,0 +1,67 @@
+.suchergebnisse{
+	margin: 40px 0px 20px 40px;
+	font-size: 20px;
+}
+
+/*Link AREA*/
+
+div.search-area{
+	margin-top: 70px;
+}
+
+.Linkbox{
+	margin:0px 30px 20px 40px;
+}
+
+.Linkflex{
+	display: flex;
+	flex-direction: column;
+}
+
+.Linkflex div{
+	margin-top: 15px;
+	margin-left: 20px;
+}
+
+.Linkflex div span:nth-child(1){
+	display: inline-block;
+	min-width: 180px;
+}
+
+.Linkbox > h2{
+	margin-bottom: 10px;
+	margin-top: 50px;
+	font-size: 26px;
+}
+
+.stylelinie{
+	height: 2px;
+	width: 80%;
+	background:rgba(46,156,202, 1); 
+	margin-bottom: 10px;
+}
+
+.google-search{
+	margin: 150px 0px 50px 40px;
+}
+
+.google-search a{
+	font-style: italic;
+	text-decoration-line: underline;
+}
+
+.google-search a:hover{
+	color: rgb(80,80,80);
+}
+
+
+
+
+
+/* small >< changes */
+
+@media (max-width: 899.9px){
+	.Linkbox{
+		margin:0px 10px 20px 30px;
+	}
+}

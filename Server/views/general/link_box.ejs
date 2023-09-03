@@ -1,0 +1,21 @@
+<div class="Linkbox">
+    <h2>
+        <%
+            if (typeof title_href !== "undefined" && title_href != null){
+        %>
+            <a href="<%- CONF.host %><%- title_href %>"><div></div><%= title %></a>
+        <%
+            } else {
+        %>
+            <a><div></div><%= title %></a>
+        <%
+            }
+        %>
+    </h2>
+    <div class="stylelinie"></div>
+    <div class="Linkflex">
+        <% for (c of children) { %>
+            <span><a href="<%- CONF.host %><%- c.href %>"><%= c.name %></a></span>
+        <% } %>
+    </div>
+</div>

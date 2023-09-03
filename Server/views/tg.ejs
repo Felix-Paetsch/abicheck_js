@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="icon" href="<%- CONF.host %>/images/general/webcon2.png">
+	<title>Analysis</title>
+	<link rel="stylesheet" type="text/css" href="<%- CONF.host %>/css/sub_page.css">
+</head>
+<body>
+
+<%- include("general/page_top") %>
+
+<%- include("general/fixed_sidecontent", {
+	top: {
+		href: "#",
+		name: "Startseite"
+	},
+	main: {
+		href: null,
+		name: "Rechner",
+		children: [{
+			href: "/r/Integrieren",
+			name: "Integrieren"	
+		},{
+			href: "#",
+			name: "Integrieren"	
+		}]
+	}
+}) %>
+
+<div id="main-wrapper">
+	<div class="main-content">
+		<h1 class="bighead">Analysis</h1>
+		<div class="description">
+			<p>
+				This is my introduction to Analysis
+			</p>
+			<div class="buttonflex">
+				<a href="../Tests/?q=Grundlagen">
+                    <h4>Tests</h4>
+                </a>
+                <div id="feedback-btn\" onclick="feedbackClicked()">
+                    <h4>Feedback</h4>
+                </div>
+            </div>
+		</div>
+
+		<%- include("general/search_area") %>
+
+        <%- include("general/link_box", {
+			"title": "Analysis",
+			"title_href": "/t/Analysis",
+			"children": [{
+				href: "#",
+				name: "Helllo"	
+			},{
+				href: "#",
+				name: "Helllo"	
+			},{
+				href: "#",
+				name: "Helllo"	
+			}]
+		}) %>
+		
+	</div>
+	<div class="scroll-up" id="scroll-up" tilte="Nach oben">
+		<div class="arrow arrow1"></div>
+		<div class="arrow arrow2"></div>
+	</div>
+</div>
+
+<%- include("general/feedback_btn"); %>
+<%- include("general/page_end"); %>

@@ -1,0 +1,301 @@
+/************* left fixed **************/
+@media (min-width: 900.1px){
+	.left-fixed{
+		top:300px !important;
+	}
+
+	.main-content{
+		margin-top: 80px;
+	}
+}
+
+
+/**************lets try out**************/
+p{
+	font-family: 'Roboto', serif;
+	font-size: 17px;
+}
+
+/**      top big box    **/
+
+.main-banner{
+	height: 200px;
+	margin-top: 50px;
+	/*	background-color: rgba(40,40,40, 1);
+	color: white;*/
+	border-top: solid 3px rgba(46,156,202, 1);
+	border-bottom: solid 3px rgba(46,156,202, 1);
+	display: flex;
+	justify-content: center;
+}
+
+.banner-img{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.banner-img-img{
+	background:url("../bilder/abicheck.svg") no-repeat 50% 50%;
+  	background-size:contain;
+ 	width: 100px;
+  	height: 100px;
+  	margin-right: 50px;
+  	transform: scale(1.2);
+}
+
+.banner-text{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transform: scale(1.2);
+	padding-right: 20px;
+}
+
+.banner-text h1{
+	font-size: 40px;
+    font-weight: 500;
+    margin:0px;
+}
+
+.banner-text h6{
+	font-size: 20px;
+    font-weight: 500;
+    margin:0px;
+}
+
+@media (min-width: 900px){
+	.main-banner{
+		justify-content: flex-start;
+		padding-left: 350px;
+	}
+}
+
+/********/
+.leftbar{
+	margin:40px 10% 30px 0px;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 20px 10px 20px 80px;
+	background-color: rgb(40,40,40);
+	border-bottom-right-radius: 25px;
+	border-top-right-radius: 25px;
+	color: white;
+	position: relative;
+	z-index: 3;
+	font-family: 'Montserrat', sans-serif;
+	display: block;
+}
+
+.leftbar:hover{
+	color: rgb(200,200,200);
+	transition-duration: .3s;
+}
+
+.was-ist{
+	margin: 30px 5px 20px 40px;
+	font-size: 28px;
+	font-weight: 1000;
+	text-decoration-line: underline;
+}
+
+/****/
+.description{
+	margin:30px 30px 50px 40px;
+	font-size: 20px;
+	line-height: 25px;
+	position: relative;
+
+	/*border-left: 5px rgba(34,116,151,.85) solid;*/
+	padding: 0px 160px 0px 0px;
+	min-height: 120px;
+}
+
+/* buttonflex*/
+
+.buttonflex{
+	position: absolute;
+	bottom:0px;
+	right: -10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	height: 100%;
+}
+
+.buttonflex > a{
+	min-width: 120px;
+	background:rgba(34,116,151,.85);
+	margin: 15px 0px 0px 0px;
+	padding: 10px 10px 10px 10px;
+	transition-duration: .3s;
+}
+
+.buttonflex > a:last-child{
+	background:rgba(20,160,152, 1);
+}
+
+.buttonflex > a:hover{
+	background:rgba(34,116,151,1);
+}
+
+.buttonflex > a:last-child:hover{
+	background: #118982;
+}
+
+.buttonflex > a h4{
+	font-size: 14px;
+	font-weight: 800;
+	color: white;
+	margin: 0px;
+}
+
+
+/*Link AREA*/
+
+.Linkbox{
+	margin:0px 30px 20px 40px;
+}
+
+.Linkbox > h2 div{
+	width: 30px;
+	height: 30px;
+	margin-bottom: -5px;
+	margin-right: 5px;
+	background-color: red;
+	display: inline-block;
+	background:url("../bilder/F14C.svg") no-repeat 50% 50%;
+ 	background-size:contain;
+}
+
+.Linkflex{
+	display: flex;
+	flex-direction: column;
+}
+
+.Linkflex span{
+	margin-top: 15px;
+	margin-left: 20px;
+}
+
+.Linkbox > h2{
+	margin-bottom: 10px;
+	margin-top: 50px;
+	font-size: 26px;
+}
+
+.stylelinie{
+	height: 2px;
+	width: 80%;
+	background:rgba(46,156,202, 1); 
+	margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/* small >< changes */
+
+@media (max-width: 899.9px){
+
+	.bighead{
+		margin-top: 30px;
+	}
+
+	.description{
+		margin:0px 10px 50px 30px;
+		font-size: 16px;
+		line-height: 25px;
+		position: relative;
+
+		/*border-left: 5px rgba(34,116,151,.85) solid;*/
+		padding: 0px 0px 0px 0px;
+		min-height: 120px;
+	}
+
+	.Linkbox{
+		margin:0px 10px 20px 30px;
+	}
+
+	.buttonflex{
+		position: unset;
+		justify-content: space-between;
+		flex-direction: row;
+		height: 100%;
+	}
+
+	.buttonflex > a{
+		min-width: calc(50% - 30px);
+		background:rgba(34,116,151,.85);
+		margin: 15px 0px 0px 0px;
+		padding: 10px 10px 10px 10px;
+	}
+
+	.buttonflex > a:last-child{
+		background:rgba(20,160,152, 1);
+	}
+
+	.buttonflex > a h4{
+		font-size: 14px;
+		font-weight: 800;
+		color: white;
+		margin: 0px;
+	}
+
+	.was-ist{
+		margin: 30px 5px 20px 30px;
+	}
+
+
+}
+
+@media (max-width: 400px){
+	.buttonflex{
+		position: unset;
+		justify-content: space-between;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.buttonflex > a{
+		width: unset;
+	}
+}
+
+@media (max-width: 500px){
+	.banner-img{
+		transform: scale(0.85, 0.85);
+	}
+
+	.banner-img-img{
+		margin-right: 30px;
+	}
+
+	.banner-text{
+		transform: scale(1.05, 1.05);
+	}
+}
+
+@media (max-width: 400px){
+	.main-banner{
+		height: 160px;
+	}
+
+	.banner-img{
+		transform: scale(0.70, 0.70);
+	}
+
+	.banner-img-img{
+		margin-right: -10px;
+	}
+
+	.banner-text{
+		transform: scale(.9, .9);
+	}
+}

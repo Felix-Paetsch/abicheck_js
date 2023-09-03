@@ -1,0 +1,158 @@
+:root{
+	font-size: 16px;
+}
+
+body{
+	margin:0px;
+	padding:0px;
+
+	
+	font-family: 'Montserrat', sans-serif;
+}
+
+a{color:unset;text-decoration:unset;}
+
+.navtop {position: fixed;
+		height:70px;
+		overflow: hidden;
+		top:0px;
+		display:flex;
+		align-items: center;
+		background:#111;
+		width: 100%;
+		color:white;
+		opacity: 1;
+		z-index:90;
+		background-position: center;
+		background: url(http://localhost:3005/images/general/tryoutbackground.jpg); 
+		background-position: top;
+		background-size: cover;
+	}
+
+.navtop-rechts .trenn{
+	width: 1px;
+	margin: 20px 10px 20px 10px;
+	background-color: white;
+	height: 30px;
+	transform: rotateZ(0deg);
+}
+
+.navtop-rechts a{
+	font-size: 18px;
+}
+
+.navtop-rechts a:hover{
+	color:rgb(200,200,200);
+	transition-duration: .3s;
+}
+
+.navtop .logo-area{
+	position: absolute;
+	left:0px;
+	padding: 5px 100px 5px 20px;
+	display:flex;
+	background: linear-gradient(to right, rgba(0,0,0,1), rgba(100,100,100,0));
+}
+
+.navtop .logo-area .logo-img{
+	background:url("http://localhost:3005/images/general/webcon2.png") no-repeat 50% 50%;
+	background-size:contain;
+	width: 70px;
+	height: 70px;
+}
+
+.navtop .logo-area .logo-name{
+	font-size:27px;
+	align-self: center;
+	margin-left:10px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.navtop > .navtop-rechts{
+	position: absolute;
+	right: 10%;
+	display: flex;
+	align-items: center;
+}
+
+.zwischenlinie-a{
+	position:fixed;
+	top:70px;
+	background-color:rgb(0,0,0);
+	height: 5px;
+	width: 100%;z-index: 89;
+}
+
+.zwischenlinie-b{
+	height: 60px;
+}
+
+@media (max-width: 600px){
+	.navtop > .navtop-rechts{
+		display: none;
+	}
+	.navtop .logo-area{
+		padding: 5px 100px 5px 20px;
+	}
+}
+
+@media (min-width: 600.1px) and (max-width: 750px){
+	.navtop-rechts .trenn{
+		width: 1px;
+		margin: 20px 5px 20px 5px;
+		background-color: white;
+		height: 30px;
+		transform: rotateZ(0deg);
+	}
+
+	.navtop-rechts a{
+		font-size: 18px;
+	}
+
+	.navtop > .navtop-rechts{
+		right: 75px;
+		left: unset;
+	}
+
+	.navtop .logo-area{
+		padding: 5px 100px 5px 70px;
+	}
+}
+
+@media (min-width: 750.1px) and (max-width: 900px){
+	.navtop-rechts .trenn{
+		width: 1px;
+		margin: 20px 5px 20px 5px;
+		background-color: white;
+		height: 30px;
+		transform: rotateZ(0deg);
+	}
+
+	.navtop-rechts a{
+	}
+
+	.navtop > .navtop-rechts{
+		right: 125px;
+		left: unset;
+	}
+
+	.navtop .logo-area{
+		padding: 5px 100px 5px 120px;
+	}
+}
+
+
+@media (min-width: 900.1px){
+	.navtop .logo-area{
+		padding: 5px 100px 5px 300px;
+	}
+}
+
+
+
+@media (min-width: 1250px){
+	.navtop > .navtop-rechts{
+		left: calc(1150px - 196px - 40px);
+		right: unset;
+	}
+}

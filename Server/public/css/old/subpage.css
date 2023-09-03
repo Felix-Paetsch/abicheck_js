@@ -1,0 +1,193 @@
+
+/**************lets try out**************/
+p{
+	font-family: 'Roboto', serif;
+	font-size: 17px;
+}
+
+/* right barrrrrrrrrrrrrr*/
+
+.rightbar{
+	width: 4px;
+	height: 400px;
+	position: absolute;
+	right: -10px;
+	top: -30px;
+	background-color: #118982;
+}
+
+
+
+/********/
+
+.bighead{
+    margin: 70px 30px 30px 20px;
+    font-size: 60px;
+    font-weight: 500;/*font-size 50, weight 1000*/
+    text-decoration-line: underline;
+    text-align: center;
+}
+
+.description{
+	margin:0px 30px 50px 40px;
+	font-size: 16px;
+	line-height: 25px;
+	position: relative;
+
+	/*border-left: 5px rgba(34,116,151,.85) solid;*/
+	padding: 0px 160px 0px 0px;
+	min-height: 120px;
+}
+
+.buttonflex{
+	position: absolute;
+	bottom:0px;
+	right: -10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	height: 100%;
+}
+
+.buttonflex > a, .buttonflex > div{
+	min-width: 120px;
+	background:rgba(34,116,151,.85);
+	margin: 15px 0px 0px 0px;
+	padding: 10px 10px 10px 10px;
+	transition-duration: .3s;
+}
+
+.buttonflex > a:hover{
+	background:rgba(34,116,151,1);
+}
+
+.buttonflex > div:last-child{
+	background:rgba(20,160,152, 1);
+}
+
+.buttonflex > div:last-child:hover{
+	background: #118982;
+}
+
+.buttonflex > a h4, .buttonflex > div h4{
+	font-size: 14px;
+	font-weight: 800;
+	color: white;
+	margin: 0px;
+	cursor: pointer;
+}
+
+/*Link AREA*/
+
+.Linkbox{
+	margin:0px 30px 20px 40px;
+}
+
+.Linkflex{
+	display: flex;
+	flex-direction: column;
+}
+
+.Linkflex span{
+	margin-top: 15px;
+	margin-left: 20px;
+}
+
+.Linkbox > h2{
+	margin-bottom: 10px;
+	margin-top: 50px;
+}
+
+.stylelinie{
+	height: 2px;
+	width: 80%;
+	background:rgba(46,156,202, 1); 
+	margin-bottom: 10px;
+}
+
+
+
+
+/******************probably needed to be important all below********************************/
+
+/*---------------------link #_______bla_______-------------------------*/
+.Linkbox{
+	position: relative;
+}
+
+.Linkbox .anchor{
+	position: absolute;
+	top:-120px;
+}
+
+/***********/
+
+.disnone{
+	display: none;
+}
+
+/* small >< changes */
+
+@media (max-width: 900px){
+
+	.bighead{
+		margin-top: 30px;
+	}
+
+	.description{
+		margin:0px 10px 50px 30px;
+		font-size: 16px;
+		line-height: 25px;
+		position: relative;
+
+		/*border-left: 5px rgba(34,116,151,.85) solid;*/
+		padding: 0px 0px 0px 0px;
+		min-height: 120px;
+	}
+
+	.Linkbox{
+		margin:0px 10px 20px 30px;
+	}
+
+	.buttonflex{
+		position: unset;
+		justify-content: space-between;
+		flex-direction: row;
+		height: 100%;
+	}
+
+	.buttonflex > a, .buttonflex > div{
+		min-width: calc(50% - 30px);
+		background:rgba(34,116,151,.85);
+		margin: 15px 0px 0px 0px;
+		padding: 10px 10px 10px 10px;
+	}
+
+	.buttonflex > div:last-child{
+		background:rgba(20,160,152, 1);
+	}
+
+	.buttonflex > a h4, .buttonflex > div h4{
+		font-size: 14px;
+		font-weight: 800;
+		color: white;
+		margin: 0px;
+	}
+
+
+}
+
+@media (max-width: 400px){
+	.buttonflex{
+		position: unset;
+		justify-content: space-between;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.buttonflex > a, .buttonflex > div{
+		width: unset;
+	}
+}
+
+/*** feedback ***/
