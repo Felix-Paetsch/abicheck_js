@@ -1,0 +1,258 @@
+.content-box a{
+	font-style: italic;
+	text-decoration-line: underline;
+}
+
+.content-box a:hover{
+	color: rgb(80,80,80);
+}
+
+.main-content > h3{
+	margin:70px 30px 20px 20px;
+	font-size: 45px;
+	font-weight: 1000;
+	text-decoration-line: underline;
+}
+
+.inhalt{
+	border-left: 5px rgba(34,116,151,.85) solid;
+	padding: 10px 10px 10px 10px;
+	margin:50px 20px 10px 70px;
+	width: 80%;
+}
+
+.inhalt .topic{
+	margin:0px 10px 10px 20px;
+	font-size: 25px;
+	font-weight: 700;
+}
+
+.topic-ul{
+	display: flex;
+	flex-direction: column;
+}
+
+.topic-ul a{
+	margin: 15px 10px 5px 30px;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.topic-ul a:hover, .left-fixed .fixed-ul a:hover{
+	color:rgb(100,100,100);
+}
+
+.inhalt{
+	position: relative;
+}
+
+.inhalt > .inhalt-box{
+	position: absolute;
+	bottom:7.5px;
+	right: -10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	height: 100%;
+}
+
+.inhalt > .inhalt-box a{
+	min-width: 120px;
+	background:rgba(34,116,151,.85);
+	margin: 15px 0px 0px 0px;
+	padding: 10px 10px 10px 10px;
+}
+
+.inhalt > .inhalt-box a:hover{
+	background-color: rgba(34,116,151,1);
+	transition-duration: .3s;
+}
+
+.inhalt > .inhalt-box .rechner{
+	background:rgba(20,160,152, 1);
+}
+
+.inhalt > .inhalt-box .rechner:hover{
+	background:#118982;
+}
+
+.inhalt > .inhalt-box a h4{
+	font-size: 14px;
+	font-weight: 800;
+	color: white;
+	margin: 0px;
+}
+
+.inhalt > .inhalt-box a h6{
+	font-size: 12px;
+	font-weight: 700;
+	color: white;
+	margin: 5px 0px 0px 0px;
+}
+
+.content-box{
+	position: relative;
+    padding: 0 10px 0 40px;
+}
+
+.content-box .anchor{
+	position: absolute;
+	top:-120px;
+}
+
+.content-box .topic{
+	margin: 50px 0px 20px 0px;
+	font-size: 30px;
+	font-weight: 500;
+	text-decoration-line: underline;
+}
+
+.content-box > p{
+	font-size: 16px;
+	line-height: 25px;
+	font-family: 'Roboto', serif;
+}
+
+.mobile-end{
+	display: none;
+}
+
+.disnone{
+	display: none;
+}
+
+@media (max-width: 900px){
+
+    .main-content > h3{
+        margin:30px 5px 20px 20px;
+        font-size: 26px;
+        font-weight: 1000;
+        text-decoration-line: underline;
+    }
+
+    .inhalt{
+        padding: 10px 10px 10px 10px;
+        margin:30px 30px 10px 30px;
+    }
+
+    .inhalt .topic{
+        margin:0px 10px 10px 5px;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .topic-ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .topic-ul a{
+        margin: 15px 10px 5px 15px;
+        font-size: 18px;
+    }
+
+    .topic-ul a:hover, .left-fixed .fixed-ul a:hover{
+        color:rgb(100,100,100);
+    }
+
+    .content-box{
+        padding :0px 10px 0px 30px;
+    }
+
+    .content-box .anchor{
+        position: absolute;
+        top:-100px;
+    }
+
+    .content-box .topic{
+        margin: 50px 0px 20px 0px;
+        font-size: 25px;
+        font-weight: 500;
+        text-decoration-line: underline;
+    }
+
+    .content-box > p{
+        margin:0px 0px 20px 0px;
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+	.topic-ul a{
+		margin: 15px 10px 0px 30px;
+		font-size: 18px;
+		cursor: pointer;
+	}
+}
+
+@media (max-width: 500px){
+	.inhalt .inhalt-box{
+		display: none;
+	}
+
+	.mobile-end{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin:0px 10px 40px 30px;
+	}
+
+	.mobile-end a{	
+		width: calc(50% - 25px);
+		background:rgba(34,116,151,.85);
+		margin:10px 0px 0px 0px;
+		padding: 15px 10px 15px 10px;
+	}
+
+	.mobile-end a:hover{
+		background-color: rgba(34,116,151,1);
+		transition-duration: .3s;
+	}
+
+	.mobile-end a h4{
+		font-size: 14px;
+		font-weight: 800;
+		color: white;
+		margin: 0px;
+	}
+
+	.mobile-end a h6{
+		font-size: 12px;
+		font-weight: 700;
+		color: white;
+		margin: 5px 0px 0px 0px;
+	}
+
+	.mobile-end .rechner{
+		background:rgba(20,160,152, 1);
+	}
+
+	.mobile-end .rechner:hover{
+		background:#118982;
+	}
+	
+}
+
+@media (max-width: 400px){
+	.mobile-end{
+		flex-direction: column;
+		flex-wrap: wrap;
+		margin:-10px 10px 20px 30px;
+	}
+
+	.mobile-end a{
+		background:rgba(34,116,151,.85);
+		margin: 15px 0px 0px 0px;
+		width: unset;
+	}
+}
+
+@media (min-width: 600px) and (max-width: 900px){
+	.main-content > h3{
+		margin:30px 5px 20px 20px;
+		font-size: 38px;
+		font-weight: 1000;
+		text-decoration-line: underline;
+	}
+}

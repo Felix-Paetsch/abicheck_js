@@ -1,0 +1,93 @@
+<% 
+	/* 
+		This article will be used to turn the templates into pages.
+		This specific one is for creating the files for the website.
+
+		The require in the attributes also get compiled into js_requirements
+		or css_requirements.
+	*/
+%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="icon" href="<%%- CONF.host %%>/images/general/webcon2.png">
+	<title><%= tree.title.value %></title>
+	<link rel="stylesheet" type="text/css" href="<%%- CONF.host %%>/css/article.css">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+	<% for (const js of js_requirements){ %>
+		<script src="<%- js.value %>"></script>
+	<% } %>
+	
+	<% for (const css of css_requirements){ %>
+		<link rel="stylesheet" type="text/css" href="<%- css.value %>">
+	<% } %>
+</head>
+<body>
+
+<%%- include("general/page_top") %%>
+
+<%%- include("general/fixed_sidecontent", {
+	top: {
+		href: "#",
+		name: "Startseite"
+	},
+	main: {
+		href: null,
+		name: "Rechner",
+		children: [{
+			href: "/r/Integrieren",
+			name: "Integrieren"	
+		},{
+			href: "#",
+			name: "Integrieren"	
+		}]
+	}
+}) %%>
+
+<div id="main-wrapper">
+	<div class="main-content">
+		<h3 class="title"><%= tree.title.value %></h3>
+		<div class="box inhalt">
+			<div class="topic">Inhalt</div>
+			<div class="topic-ul">
+				<% for (let i = 0; i < tree.content_sections.length; i++) { %>
+					<a href="#content_section<%= (i+1) %>anchor"><%= i+1 %>. <%= tree.content_sections[i].title.value %></a>
+				<% } %>
+			</div>
+			<div class="inhalt-box">
+				<a href="#" class="übungen">
+					<h4>Übungen</h4><h6>So wirds gemacht</h6>
+				</a>
+			</div>
+		</div>
+
+		<% 
+			for (let i = 0; i < tree.content_sections.length; i++) { 
+				const cc = tree.content_sections[i];
+		%>
+			<div class="box content-box">
+				<div class="anchor" id="#content_section<%= (i+1) %>anchor"></div>
+				<h3 class="topic"><%= i+1 %>. <%= cc.title.value %></h3>
+				<% for (const child of cc.content) { %>
+					<%- child.render_self({}) %>
+				<% } %>
+			</div>
+		<% } %>
+
+		<div class="mobile-end">
+			<a href="#" class="übungen">
+				<h4>Übungen</h4><h6>So wirds gemacht</h6>
+			</a>
+		</div>
+	</div>
+
+	<div class="scroll-up" id="scroll-up" tilte="Nach oben">
+		<div class="arrow arrow1"></div>
+		<div class="arrow arrow2"></div>
+	</div>
+</div>
+
+<%%- include("general/feedback_btn"); %%>
+<%%- include("general/page_end"); %%>

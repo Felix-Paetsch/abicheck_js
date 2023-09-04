@@ -49,7 +49,10 @@ module.exports = (tokens, line_counter) => {
             line_counter.error("Title has length 0");
         }
 
-        content_section_data.title = title;
+        content_section_data.title = {
+            value: title,
+            line: line_counter.get_current_line()
+        };
 
         let lines = get_content_lines();
         let parsed_lines = parse_single_content_lines(lines, line_counter);

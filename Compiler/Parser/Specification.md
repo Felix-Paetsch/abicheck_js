@@ -1,10 +1,8 @@
-Each attribute should look like:
+Possible contents:
 
-```js 
-{
-    // ...,
-    line: x
-}
-```
-
-if there is a natual value it should have the key `value:`
+- TAG
+- TEXT
+- LIST
+- HTML_EMBEDDING
+- JS_EMBEDDING
+- CSS_EMBEDDING

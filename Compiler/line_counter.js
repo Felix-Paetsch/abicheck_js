@@ -15,22 +15,24 @@ module.exports = {
         state.line += n;
     },
     error: (str) => {
-        throw new Error(`\n================================
+        console.error(`\n================================
 Error at line: ${ state.line }
 
-    >> ${ getNthLine(state.text, state.line) }
+    $$ ${ getNthLine(state.text, state.line) }
 
 ${ str }
-================================`)
+================================`);
+        process.exit();
     },
     error_at: (str, line) => {
-        throw new Error(`\n================================
+        console.error(`\n================================
 Error at line: ${ state.line }
 
-    >> ${ getNthLine(state.text, line) }
+    $$ ${ getNthLine(state.text, line) }
 
 ${ str }
-================================`)
+================================`);
+        process.exit();
     }
 }
 

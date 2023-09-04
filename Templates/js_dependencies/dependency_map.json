@@ -1,0 +1,5 @@
+{
+    "dependency_name": "file",
+    "dependency_name2": ["list_of_files"],
+    "_comment": "Relative to the folder ./js_dependencies"
+}

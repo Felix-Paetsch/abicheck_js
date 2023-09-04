@@ -12,7 +12,6 @@ function addClass(el, className) {
     }
 }
 
-
 function removeClass(el, className) {
     var el = document.querySelectorAll(el);
     
@@ -25,7 +24,6 @@ function removeClass(el, className) {
       }
     }
 }
-
 
 function toggleClass(el, className) {
  var el = document.querySelectorAll(el);

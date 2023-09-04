@@ -5,6 +5,7 @@ const path = require('path');
 
 const tokenize = require("./Tokenizer/main.js");
 const parse = require("./Parser/main.js");
+const build = require("./File_Builder/main.js");
 
 // Delete contents of a directory
 function deleteDirectoryContents(directoryPath) {
@@ -21,13 +22,15 @@ function deleteDirectoryContents(directoryPath) {
 }
 
 // Delete contents of Tokens and Tree
-deleteDirectoryContents(path.join(__dirname, 'Testing', 'Tokens'));
-deleteDirectoryContents(path.join(__dirname, 'Testing', 'Tree'));
+deleteDirectoryContents(path.join(__dirname, 'Test', 'Tokens'));
+deleteDirectoryContents(path.join(__dirname, 'Test', 'Tree'));
+deleteDirectoryContents(path.join(__dirname, 'Test', 'Output'));
 
 // Process .md files in Testing/Input
-const inputFolder = path.join(__dirname, 'Testing', 'Input');
-const tokensFolder = path.join(__dirname, 'Testing', 'Tokens');
-const treeFolder = path.join(__dirname, 'Testing', 'Tree');
+const inputFolder = path.join(__dirname, 'Test', 'Input');
+const tokensFolder = path.join(__dirname, 'Test', 'Tokens');
+const treeFolder = path.join(__dirname, 'Test', 'Tree');
+const buildFolder = path.join(__dirname, 'Test', 'Output');
 
 const inputFiles = fs.readdirSync(inputFolder);
 for (const file of inputFiles) {
@@ -55,6 +58,13 @@ for (const file of inputFiles) {
         fs.writeFileSync(
             path.join(treeFolder, "main" + file.replace('.md', '.json')),
             JSON.stringify(main_tree, true, 2)
+        );
+        
+        const build_string = build(attributes, main_tree)
+
+        fs.writeFileSync(
+            path.join(buildFolder, file.replace('.md', '.ejs')),
+            build_string
         );
     }
 }
