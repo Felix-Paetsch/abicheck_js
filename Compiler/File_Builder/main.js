@@ -1,10 +1,16 @@
 const template_data = require("./get_template_data.js");
+
 const line_counter = require("../line_counter.js"); // Needed mainly bcs it know the text
+const create_tree_walker = require("./tree_walker.js");
 
 const ejs = require('ejs');
 const fs = require('fs');
 
 module.exports = (attr, tree) => {
+    // Has to be done once per file
+    require("./add_render_functions_to_tags.js")(template_data.tags);
+    require("./add_render_to_tree.js")(tree);
+
     // returns the string and some attributes (e.g. tg)
     // All references should be relative to the 
     // - css dep if ends with .css
@@ -14,7 +20,6 @@ module.exports = (attr, tree) => {
     
     /*
         todo: 
-        a) parse all js and css requirements from require and from the content sections
         b) go through each template data obj and give it a render method
         c) go through each tree content thingy and give it a render_self method 
     */
@@ -36,26 +41,63 @@ module.exports = (attr, tree) => {
         js_requirements,
         css_requirements,
         throw_error_at: line_counter.error_at,
-        get_uid: get_uid()
+        get_uid: require("./uid_gen.js")
     }, { async: false });
 
     return renderedTemplate;
 
 
     function evaluate_requirements(req_list){
-        // If it ends with css -> to css
-        // If it end with js -> to js
-        // If neither -> get css and js dep
-        //          if not possible: throw error
-        // Loop through both and replace with correct prefix
-        console.log(req_list);
-        return [[],[]];
+        const [js_requirements, css_requirements] = [[], []];
+        
+        for (let r of req_list){
+            if (r.value.endsWith(".css")){
+                css_requirements.push(to_absolute_path(r.value));
+            } else if (r.value.endsWith(".js")){
+                js_requirements.push(to_absolute_path(r.value));
+            } else {
+                const js_dep = template_data.js_dependencies[r.value];
+                const css_dep = template_data.css_dependencies[r.value];
+                
+                let one_exists = false;
+                if (typeof js_dep !== "undefined"){
+                    one_exists = true;
+                    if (typeof js_dep == "string"){
+                        js_requirements.push(to_absolute_path(js_dep));
+                    } else {
+                        js_requirements.push(
+                            js_dep.map(x => to_absolute_path(x))
+                        );
+                    }
+                }
+                if (typeof css_dep !== "undefined"){
+                    one_exists = true;
+                    if (typeof css_dep == "string"){
+                        css_requirements.push(to_absolute_path(css_dep));
+                    } else {
+                        css_requirements.push(
+                            css_dep.map(x => to_absolute_path(x))
+                        );
+                    }
+                }
+                if (!one_exists){
+                    line_counter.error_at(`Dependency: '${ r.value }' does not exist`, r.line);
+                }
+            }
+        }
+
+        return [js_requirements, css_requirements];
+
+        function to_absolute_path(r){
+            // console.log(r);
+            return r;
+        }
     }
 
     function get_tag_specific_requirements(){
         const req = [];
 
-        const walker = create_tree_walker();
+        const walker = create_tree_walker(tree);
         for (const node of walker){
             if (typeof node.dependencies !== "undefined"){
                 req.push(...node.dependencies.map(d => {
@@ -88,30 +130,5 @@ module.exports = (attr, tree) => {
             line_counter.error_at("Undefined tag", node.line);
         }
         return res;
-    }
-
-    function* create_tree_walker() {
-        for (const cs of tree.content_sections) {
-            yield* tree_walker_process_content_section(cs.content);
-        }
-        return false;
-    }
-    
-    function* tree_walker_process_content_section(content) {
-        for (const c of content) {
-            if (c.type === "TAG") {
-                yield* tree_walker_process_content_section(c.content);
-            } else {
-                yield c;
-            }
-        }
-        return false;
-    }    
-}
-
-function* get_uid(){
-    let count = 1;
-    while (true) {
-        yield `uid-${count++}`;
-    }
+    }  
 }

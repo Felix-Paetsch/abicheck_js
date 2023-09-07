@@ -6,6 +6,10 @@ const js_template_fp = '../Templates/js_dependencies/dependency_map.json';
 const jsonData = fs.readFileSync(js_template_fp, 'utf-8');
 const js_dependencies = JSON.parse(jsonData);
 
+const css_template_fp = '../Templates/css_dependencies/dependency_map.json';
+const cssData = fs.readFileSync(css_template_fp, 'utf-8');
+const css_dependencies = JSON.parse(cssData);
+
 const tagsArray = [];
 
 function processtagFolder(folderPath) {
@@ -54,5 +58,9 @@ processtagFolder(tagsRootFolder);
 
 module.exports = {
     tags: tagsArray,
-    js_dependencies
+    js_dependencies,
+    css_dependencies,
+    std_tags: {
+        "list": fs.readFileSync('../Templates/std_tags/list.ejs', 'utf-8')
+    }
 }
