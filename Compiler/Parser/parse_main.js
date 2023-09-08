@@ -1,8 +1,9 @@
 let parsed_data = {};
 const parse_single_content_lines = require("./parse_single_content_lines.js");
 const merge_parsed_content_lines = require("./merge_parsed_content_lines.js");
+const line_counter = require("../line_counter.js"); // Needed mainly bcs it know the text
 
-module.exports = (tokens, line_counter) => {
+module.exports = (tokens) => {
     parsed_data = {
         content_sections: []
     };

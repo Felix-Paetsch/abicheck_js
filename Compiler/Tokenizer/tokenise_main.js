@@ -85,6 +85,7 @@ function try_merge_tokens(t1, t2){
         "LESS_THAN",
         "GREATER_THAN",
         "STAR",
+        "PLUS"
     ].includes(t1.type)){
         return token(t1.type, t1.value + t2.value, {
             amt: t1.amt + t2.amt
@@ -93,10 +94,6 @@ function try_merge_tokens(t1, t2){
 
     if (t1.type === "COLON"){
         return token("TWO_COLON", t1.value + t2.value);
-    }
-
-    if (t1.type === "PLUS"){
-        return token("TWO_PLUS", t1.value + t2.value);
     }
 
     if (t1.type === "FORWARD_SLASH"){

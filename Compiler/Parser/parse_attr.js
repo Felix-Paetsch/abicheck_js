@@ -1,6 +1,7 @@
 let attributes = [];
+const line_counter = require("../line_counter.js"); // Needed mainly bcs it know the text
 
-module.exports = (tokens, line_counter) => {
+module.exports = (tokens) => {
     attributes = [];
 
     while (tokens.length > 0){
@@ -34,7 +35,7 @@ module.exports = (tokens, line_counter) => {
             continue;
         }
 
-        throw new Error("INTERNAL: Unexpected token!", token[0].type);
+        throw new Error("INTERNAL: Unexpected token!", tokens[0].type);
     }
 
     return attributes;

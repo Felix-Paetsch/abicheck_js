@@ -1,8 +1,0 @@
-Possible contents:
-
-- TAG
-- TEXT
-- LIST
-- HTML_EMBEDDING
-- JS_EMBEDDING
-- CSS_EMBEDDING
