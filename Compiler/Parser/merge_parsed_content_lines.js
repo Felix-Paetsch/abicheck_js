@@ -27,7 +27,9 @@ module.exports = (parsed_lines, line_counter) => {
 
         // c) tag end
         if (parsed_lines[0].type == "TAG_END"){
-            if (parsed_lines[0].amt <= indent){
+            if (parsed_lines[0].amt < indent){
+                return [];
+            } else if (parsed_lines[0].amt == indent) {
                 const l = parsed_lines.shift();
                 return [];
             } else {

@@ -56,7 +56,7 @@ module.exports = (tokens, line_counter) => {
 
         let lines = get_content_lines();
         let parsed_lines = parse_single_content_lines(lines, line_counter);
-        let merged_lines = merge_parsed_content_lines(parsed_lines);
+        let merged_lines = merge_parsed_content_lines(parsed_lines, line_counter);
 
         content_section_data.content = merged_lines;
         return content_section_data;

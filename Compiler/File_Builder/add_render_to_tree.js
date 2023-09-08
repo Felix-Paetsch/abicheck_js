@@ -11,24 +11,24 @@ module.exports = (tree) => {
                     node.text_sections.map(t => render_text_section(t)).join("\n")
                 }</p>`};
         } else if (node.type == "LIST"){
-            node.render_self = ejs.render(
+            node.render_self = () => {return ejs.render(
                 template_data.std_tags.list,
                 {
                     ...node,
                     get_uid: require("./uid_gen.js")
                 }, { async: false }
-            );
+            );}
         } else if (node.type == "HTML_EMBEDDING") {
             node.render_self = () => {
                 return node.text;
             }
         } else if (node.type == "JS_EMBEDDING") {
             node.render_self = () => {
-                return `<script>{${ node.text }}</script>`;
+                return `<script>{\n${ node.text }\n}</script>`;
             }
         } else if (node.type == "CSS_EMBEDDING") {
             node.render_self = () => {
-                return `<style>{${ node.text }}</style>`;
+                return `<style>${ node.text }</style>`;
             }
         } else if (node.type == "TAG") {
             const tag = template_data.tags.filter(x => {
@@ -48,7 +48,7 @@ function render_text_section(t){
     if (t.type == "MD_TEXT"){
         return t.content.children.map(c => render_md_text(c)).join("");
     } else {
-        console.log(t);
+        console.log("render text::", t);
     }
 }
 

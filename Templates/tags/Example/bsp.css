@@ -1,0 +1,28 @@
+.content-box .example{
+	margin: 0px 10px 20px 40px;
+	padding: 15px 10px 15px 30px;
+	border:solid rgba(46,156,202, 1);
+	border-radius: 30px;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.content-box .example > li{
+	margin:15px 10px 15px 10px;
+	list-style: none;
+}
+
+.content-box .example::after{
+	content: 'BEISPIEL';
+	position: absolute;
+	top: 5px;
+	right: 15px;
+	font-size: 12px;
+	font-weight: 800;
+	color: #227497;
+}
+
+.content-box .important li, .content-box .example li, .content-box .summary li{
+	font-size: 16px;
+	line-height: 25px;
+}

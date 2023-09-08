@@ -48,7 +48,7 @@ for (const file of inputFiles) {
             JSON.stringify(main_tokens, true, 2)
         );
 
-        const [attributes, main_tree] = parse(fileContent, attr_tokens, main_tokens);
+        const [attributes, main_tree] = parse(attr_tokens, main_tokens);
 
         fs.writeFileSync(
             path.join(treeFolder, "attr" + file.replace('.md', '.json')),

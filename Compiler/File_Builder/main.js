@@ -118,7 +118,6 @@ module.exports = (attr, tree) => {
                         name: "tag_dependency"
                     }
                 }));
-                console.log();
             }
         }
         return req;

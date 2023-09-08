@@ -70,8 +70,11 @@
 			<div class="box content-box">
 				<div class="anchor" id="#content_section<%= (i+1) %>anchor"></div>
 				<h3 class="topic"><%= i+1 %>. <%= cc.title.value %></h3>
-				<% for (const child of cc.content) { %>
-					<%- child.render_self({}) %>
+				<% for (const child of cc.content) { 
+					// console.log(child);
+					// console.log(child.render_self());
+				%>
+					<%- child.render_self() %>
 				<% } %>
 			</div>
 		<% } %>
