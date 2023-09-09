@@ -78,7 +78,8 @@ module.exports = (tokens) => {
         attributes.push({
             name: attr_name.trim(),
             value: attr_value.trim(),
-            line: line_counter.get_current_line()
+            line: line_counter.get_current_line(),
+            error: line_counter.throw_at_current_line()
         });
     }
 }

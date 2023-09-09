@@ -1,4 +1,4 @@
-module.exports = (line, line_counter) => {
+module.exports = (line) => {
     let res = {
         line: line.line,
         type: "TEXT",

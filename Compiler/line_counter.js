@@ -14,26 +14,25 @@ module.exports = {
     n_new_lines: (n) => {
         state.line += n;
     },
-    error: (str) => {
-        console.error(`\n================================
-Error at line: ${ state.line }
-
-    $$ ${ getNthLine(state.text, state.line) }
-
-${ str }
-================================`);
-        process.exit();
-    },
-    error_at: (str, line) => {
-        console.error(`\n================================
-Error at line: ${ state.line }
-
-    $$ ${ getNthLine(state.text, line) }
-
-${ str }
-================================`);
-        process.exit();
+    error: (str) => { error_at(str, state.line); },
+    error_at,
+    throw_at_current_line: () => {
+        const current_line = state.line;
+        return (str) => {
+            error_at(str, current_line);
+        }
     }
+}
+
+function error_at(str, line) {
+    console.error(`\n================================
+Error at line: ${ line }
+
+$$ ${ getNthLine(state.text, line) }
+
+${ str }
+================================`);
+    process.exit();
 }
 
 function getNthLine(text, n) {

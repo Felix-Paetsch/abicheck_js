@@ -1,7 +1,8 @@
 let parsed_data = {};
 const parse_single_content_lines = require("./parse_single_content_lines.js");
 const merge_parsed_content_lines = require("./merge_parsed_content_lines.js");
-const line_counter = require("../line_counter.js"); // Needed mainly bcs it know the text
+
+const line_counter = require("../line_counter.js");
 
 module.exports = (tokens) => {
     parsed_data = {
@@ -27,7 +28,8 @@ module.exports = (tokens) => {
 
     parsed_data.title = {
         value: title.trim(),
-        line: line_counter.get_current_line()
+        line: line_counter.get_current_line(),
+        error: line_counter.throw_at_current_line()
     }
 
     if (tokens[0].type == "ERROR"){
@@ -52,7 +54,8 @@ module.exports = (tokens) => {
 
         content_section_data.title = {
             value: title,
-            line: line_counter.get_current_line()
+            line: line_counter.get_current_line(),
+            error: line_counter.throw_at_current_line()
         };
 
         let lines = get_content_lines();
@@ -69,6 +72,7 @@ module.exports = (tokens) => {
         while (!["HASHTAG", "EOF"].includes(tokens[0])){
             const current_line = {
                 line: line_counter.get_current_line(),
+                error: line_counter.throw_at_current_line(),
                 tokens: []
             };
             

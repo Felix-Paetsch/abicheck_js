@@ -36,6 +36,10 @@ const inputFiles = fs.readdirSync(inputFolder);
 for (const file of inputFiles) {
     if (path.extname(file) === '.md') {
         const fileContent = fs.readFileSync(path.join(inputFolder, file), 'utf-8').replace(/\r/g, "");
+        
+        const line_counter = require("./line_counter.js");
+        line_counter.init(fileContent);
+        
         const [attr_tokens, main_tokens] = tokenize(fileContent);
         
         fs.writeFileSync(

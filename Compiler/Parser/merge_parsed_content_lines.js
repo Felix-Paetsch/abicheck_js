@@ -1,4 +1,4 @@
-module.exports = (parsed_lines, line_counter) => {
+module.exports = (parsed_lines) => {
     let res = parse_from_indent(0);
     return res;
 
@@ -15,6 +15,7 @@ module.exports = (parsed_lines, line_counter) => {
                 return [{
                     type: "TAG",
                     line: l.line,
+                    error: l.error,
                     string_attributes: l.string_attributes,
                     name: l.tag_name,
                     attributes: l.attributes,
@@ -33,7 +34,7 @@ module.exports = (parsed_lines, line_counter) => {
                 const l = parsed_lines.shift();
                 return [];
             } else {
-                line_counter.error_at("Opening tag not found", parsed_lines[0].line);
+                parsed_lines[0].line.error("Opening tag not found");
             }
         }
 
@@ -43,6 +44,7 @@ module.exports = (parsed_lines, line_counter) => {
             return [{
                 type: "TEXT",
                 line: l.line,
+                error: l.error,
                 text_sections: l.text_sections
             }].concat(parse_from_indent(indent)); 
         }
@@ -52,6 +54,7 @@ module.exports = (parsed_lines, line_counter) => {
             return [{
                 type: "LIST",
                 line: parsed_lines[0].line,
+                error: parsed_lines[0].error,
                 list_type: parsed_lines[0].list_type,
                 list_items: parse_list_items(parsed_lines[0].list_type)
             }].concat(parse_from_indent(indent)); 

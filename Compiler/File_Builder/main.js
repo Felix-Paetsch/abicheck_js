@@ -1,6 +1,5 @@
 const template_data = require("./get_template_data.js");
 
-const line_counter = require("../line_counter.js"); // Needed mainly bcs it know the text
 const create_tree_walker = require("./tree_walker.js");
 
 const ejs = require('ejs');
@@ -10,19 +9,6 @@ module.exports = (attr, tree) => {
     // Has to be done once per file
     require("./add_render_functions_to_tags.js")(template_data.tags);
     require("./add_render_to_tree.js")(tree);
-
-    // returns the string and some attributes (e.g. tg)
-    // All references should be relative to the 
-    // - css dep if ends with .css
-    // - js dep if end with .js
-    // - unchanged if starts with http
-    // - base_dir if starts with $
-    
-    /*
-        todo: 
-        b) go through each template data obj and give it a render method
-        c) go through each tree content thingy and give it a render_self method 
-    */
 
     const templatePath = '../Templates/article_templates/website_article.ejs';
 
@@ -40,7 +26,6 @@ module.exports = (attr, tree) => {
         tree,
         js_requirements,
         css_requirements,
-        throw_error_at: line_counter.error_at,
         get_uid: require("./uid_gen.js")
     }, { async: false });
 
@@ -81,7 +66,7 @@ module.exports = (attr, tree) => {
                     }
                 }
                 if (!one_exists){
-                    line_counter.error_at(`Dependency: '${ r.value }' does not exist`, r.line);
+                    r.line.error(`Dependency: '${ r.value }' does not exist`);
                 }
             }
         }
@@ -126,7 +111,7 @@ module.exports = (attr, tree) => {
     function get_tag_template_for_node(node){
         let res = template_data.tags.filter(t => t.meta_data.name.toLowerCase() == node.name.toLowerCase())[0];
         if (typeof res == "undefined") {
-            line_counter.error_at("Undefined tag", node.line);
+            node.line.error("Undefined tag");
         }
         return res;
     }  
