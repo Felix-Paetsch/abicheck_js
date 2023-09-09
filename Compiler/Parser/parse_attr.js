@@ -1,5 +1,5 @@
 let attributes = [];
-const line_counter = require("../line_counter.js"); // Needed mainly bcs it know the text
+const line_counter = require("../general/line_counter.js"); // Needed mainly bcs it know the text
 
 module.exports = (tokens) => {
     attributes = [];
